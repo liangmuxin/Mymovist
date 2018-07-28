@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Friend</title>
+	{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+</head>
+<body>
+	{% for fr in f %}
+<a href="{% url 'viewfriend' fr %}">{{fr}}</a>
+	{% endfor %}
+<button type="button" onclick="location.href='{% url 'backtowelcome' %}'"> Return </button>
+</body>
+</html>

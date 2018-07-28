@@ -1,0 +1,13 @@
+select {
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+    width: 200px;
+    height: 20px;
+}
+p{
+	position: absolute;
+	right:10px;
+
+	top:5px;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+</head>
+<body>
+<h1>You just searched: </h1>
+<p>
+<button type="button" onclick="location.href='{% url 'logout' %}'">log out</button>
+</p>
+
+
+<p1>{{resuser}}</p1>
+<button name="col">Show His/Her collection</button>
+<button name = "like">Like</button>
+</body>
+</html>

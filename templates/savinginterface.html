@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Saving</title>
+	{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mymovielist/css/savingstyle.css' %}">
+</head>
+<body>
+<h1>Please RATE {{thismovie}} and leave your comments</h1>
+<br>
+
+<form action="/create_history/{{thismovie}}/", method="post">
+		{% csrf_token %}
+  <div class="form-wrapper cf">
+            <select name="searchby">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>              
+                 <option>9</option>
+                <option>10</option>
+              </select>
+
+</div>
+<div class="form-wrapper cf">
+		<textarea class = "ta5" rows ="10" cols ="50" name = "comments" value = "leave your excellent comment here!"></textarea>
+
+		<input type="submit" name="submit" value = "Comment"><br>
+
+		<button type="button" onclick="location.href='{% url 'logout' %}'">log out</button><br>
+<button type="button" onclick="location.href='{% url 'backtowelcome' %}'"> Return </button><br>
+	</div>
+
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load staticfiles %}
+{% if mess %}
+<script>
+  alert('{{ mess }}');
+</script>>
+{% endif %}
+<html>  
+<head>  
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mymovielist/css/signinstyle.css' %}">
+
+<title>Mymovielist</title>   
+</head>  
+<body >    
+
+<div class = "login-form">
+<form action="/postsign/" method ="post" name="frmLogin"  >  
+   {% csrf_token %}
+   <br>
+<img src="{% static 'mymovielist/images/logo.png' %}" >
+ <input name="email" type = "email" />
+ 
+ 
+ <input type="password" name="password"/> 
+
+  
+
+   
+ <div class = "signin">
+
+<input type="submit" name="login" value="Login"/>
+<input type="reset" name="reset">
+<button type="button" onclick="location.href='{% url 'signup' %}'">SignUp</button>    
+ </div>
+ 
+</form> 
+</div>
+</body>  
+</html>  

@@ -1,0 +1,107 @@
+
+
+<html leng="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title> Title </title>
+{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+</head>
+
+<body> 
+
+
+
+<link rel="stylesheet" type = "text/css" href = "{% static 'mymovielist/css/welcomestyle.css' %}"/>	
+
+
+
+<div class = "topnav">
+<button type="nbutton">Welcome to Mymovist, {{e}}!</button>
+<button type="button" onclick="location.href='{% url 'logout' %}'">Log Out</button>
+<button type="button" onclick="location.href='{% url 'savedsearch' %}'">Your Movielist</button>
+<button type="button" onclick="location.href='{% url 'friendlist' %}'">Your Followings</button>
+
+
+</div>
+
+<form action="/searchresults/" method="POST" name="searchby" >
+        	  {% csrf_token %}
+<div id ="holder">
+
+  <div class="form-wrapper cf">
+<div class="button-holder">
+<input type="radio" class="regular-radio" id = "all" name="country" value = "all" checked>
+<label for = "all">All Countries</label>
+
+
+<input type="radio" class="regular-radio" id ="us" name="country" value = "us">
+<label for = "us">The United States</label>
+
+
+<input type="radio"  class="regular-radio" id="uk" name ="country" value = "uk">
+<label for = "uk">Britsh</label>
+
+<input type="radio" class="regular-radio" id="gs" name= "country" value = "gs">
+<label for = "gs">Germany</label>
+<br>
+
+<input type="radio" class="regular-radio" id="gen" name = "genres" value = "all" checked>
+<label for = "gen">All Genres</label>
+
+
+<input type="radio" class="regular-radio" id="act" name = "genres" value = "act">
+<label for = "act">Action</label>
+
+<input type="radio" class="regular-radio" id="cri" name = "genres" value = "cri">
+<label for = "cri">Crime</label>
+
+<input type="radio" class="regular-radio" id="fan" name = "genres" value = "fan">
+<label for = "fan">Fantasy</label>
+
+<br>
+<input type="radio" class="regular-radio" id ="vot" name = "votes"  value = "all" checked>
+<label for = "vot">All Rating</label>
+
+<input type="radio" class="regular-radio" id ="eit" name = "votes"  value = "eit">
+<label for = "eit">over 8</label>
+
+<input type="radio" class="regular-radio" id ="fiv" name = "votes"  value = "fiv">
+<label for = "fiv">Between 5-8</label>
+
+<input type="radio" class="regular-radio" id ="bel" name = "votes"  value = "bel">
+<label for = "bel">less than 5</label>
+
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+  <div class="form-wrapper cf">
+            <select name="searchby">
+                <option>title</option>
+                <option>genres</option>
+                <option>country</option>
+                <option>user</option>
+              </select>
+
+</div>
+<div class="form-wrapper cf">
+          <input type="text" name="searchkey" placeholder="Search here...">
+          <button type="submit">GO</button>
+</div>
+
+
+      </form>
+
+
+</body>
+</html>

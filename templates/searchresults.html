@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% csrf_token %}
+	<title>Search Results</title>
+	{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'mymovielist/css/searchresultstyle.css' %}">
+</head>
+<body>
+<div class = "topnav">
+<button type="nbutton" onclick="location.href='{% url 'logout' %}'">log out</button>
+<button type="nbutton" onclick="location.href='{% url 'backtowelcome' %}'"> Return </button>
+</div>
+<h2 id = "demo">
+		{% for tit, gen, con, rat,  ove in res %}
+
+		<button class = "button" onclick = "location.href='{% url 'create' tit %}'" name = {{forloop.counter}}><span> <p><b>Title: {{tit}};</b></p> Genres:{{gen}};<br> Country:{{con}};<br>Average Rate:{{rat}};<br> Overview:{{ove}}<br></span>
+			<br>
+		</button>
+
+		{% endfor%}
+</h2>
+
+
+
+</body>
+</html>

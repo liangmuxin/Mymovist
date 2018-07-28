@@ -1,0 +1,36 @@
+{% if mess %}
+<script>
+  alert('{{ mess }}');
+</script>>
+{% endif %}
+<html>  
+<head>  
+<title>SignUp</title> 
+{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">  
+<link rel="stylesheet" type="text/css" href="{% static 'mymovielist/css/signinstyle.css' %}">
+</head>  
+<body >  
+  
+<div class = "login-form">
+<form action="/postsignup/" method ="post" name="frmLogin"  >  
+   {% csrf_token %}
+<input type = "email" name="email"> 
+ 
+
+ 
+<input type="password" name="pass">   
+
+ <div class = "signin">
+ 
+<input type="submit" value="SignUp"> 
+<button type="button" onclick="location.href='{% url 'logout' %}'">Back</button>   
+ </div>
+ 
+
+
+
+</form>  
+</div>
+</body>  
+</html>  

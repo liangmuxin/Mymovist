@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yourfriend</title>
+	{% load staticfiles %}
+<link rel="SHORTCUT ICON" href="{% static '/favicon.ico' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mymovielist/css/friendstyle.css' %}">
+</head>
+<body>
+<div class = "topnav">
+<button type="nbutton">See {{e}}'s collection</button>
+<button type="button" onclick="location.href='{% url 'follow' e %}'">Follow</button>
+<button type="button" onclick="location.href='{% url 'logout' %}'">Log Out</button>
+<button type="button" onclick="location.href='{% url 'backtowelcome' %}'"> Return </button>
+
+
+</div>
+
+		{% for tit, rat, com in res %}
+		<button class="button" onclick="location.href='{% url 'searchsaved' tit %}'"> <span><p><b>Movie: {{tit}};</b></p><br> My Rate:{{rat}};<br> Comment:{{com}};</span></button>
+		{% endfor%}
+
+</body>
+</html>
